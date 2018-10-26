@@ -1,0 +1,13 @@
+ui_print("Flashing Kernel");
+package_extract_file("boot.img", "/tmp/boot.img");
+run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/platform/155a0000.ufs/by-name/BOOT");
+ui_print("  ");
+ui_print("  ");
+ui_print("Applying Patches to System");
+mount("ext4", "EMMC", "/dev/block/platform/155a0000.ufs/by-name/SYSTEM", "/system", "max_batch_time=0,commit=1,data=ordered,barrier=1,errors=panic,nodelalloc");
+package_extract_dir("system", "/system");
+delete("/system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin");
+delete("/system/app/mcRegistry/ffffffffd00000000000000000000004.tlbin");
+delete("/system/app/mcRegistry/ffffffff000000000000000000000013.tlbin");
+unmount("/system");
+ui_print("Success");

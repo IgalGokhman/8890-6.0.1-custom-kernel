@@ -1,0 +1,17 @@
+persist.security.ams.enforcing=0
+ro.build.selinux=0
+ro.config.dmverity=false
+ro.config.kap=false
+ro.config.kap_default_on=false
+ro.config.knox=0
+ro.config.rkp=false
+ro.config.tima=0
+ro.sec.fle.encryption=false
+ro.securestorage.support=false
+ 
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Sat Feb 6 11:55:45 KST 2016
+ro.bootimage.build.date.utc=1454727345
+ro.bootimage.build.fingerprint=samsung/heroltexx/herolte:6.0.1/MMB29K/G930FXXU1APB6:user/test-keys
